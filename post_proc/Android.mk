@@ -103,9 +103,6 @@ include $(BUILD_SHARED_LIBRARY)
 
 ifneq ($(filter msm8992 msm8994 msm8996 msm8998 sdm660 sdm845 apq8098_latv sdm710 msm8953 msm8937 qcs605 sdmshrike msmnile kona lahaina holi atoll $(MSMSTEPPE) $(TRINKET) lito bengal,$(TARGET_BOARD_PLATFORM)),)
 
-# alioth uses the stock libvolumelistener.so from the vendor tree, which
-# matches the stock audio.primary.kona.so ABI.
-ifeq ($(filter alioth,$(TARGET_DEVICE)),)
 include $(CLEAR_VARS)
 
 LOCAL_CFLAGS := -DLIB_AUDIO_HAL="/vendor/lib/hw/audio.primary."$(TARGET_BOARD_PLATFORM)".so"
@@ -171,7 +168,6 @@ ifneq ($(filter kona lahaina holi,$(TARGET_BOARD_PLATFORM)),)
 LOCAL_SANITIZE := integer_overflow
 endif
 include $(BUILD_SHARED_LIBRARY)
-endif
 
 endif
 

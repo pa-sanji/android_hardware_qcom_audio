@@ -89,8 +89,7 @@ BOARD_SUPPORTS_OPENSOURCE_STHAL := true
 AUDIO_HARDWARE := audio.a2dp.default
 AUDIO_HARDWARE += audio.usb.default
 AUDIO_HARDWARE += audio.r_submix.default
-# alioth uses the stock audio.primary.kona.so from the vendor tree; the source
-# HAL is not installed.
+AUDIO_HARDWARE += audio.primary.kona
 
 #HAL Wrapper
 AUDIO_WRAPPER := libqahw
